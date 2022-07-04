@@ -1,0 +1,37 @@
+.formOut {
+  position: absolute;
+  margin-top: -717px;
+  padding-right: 603px;
+  padding-bottom: 409px;
+  background-color: #566474cc;
+  height: 600px;
+  width: 932px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formIn {
+  background-color: white;
+  padding: 20px 30px 100px 30px;
+  margin-left: 610px;
+  margin-top: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.formIn input{
+  width: 250px;
+  height: 30px;
+  
+}
+.formIn input[type="submit"] {
+  background-color: #142683;
+  color: white;
+  border-color: #142683;
+}
+.formIn p{
+  
+  margin-top: -12px;
+  color: red;
+}

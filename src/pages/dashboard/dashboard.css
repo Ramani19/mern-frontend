@@ -1,0 +1,56 @@
+
+.dashboard {
+ 
+  display: flex;
+  position: absolute;
+  /* margin-left: 756px; */
+
+}
+
+.form-here {
+  width: 50%;
+  height: 86vh;
+  
+}
+.formInside {
+  border: 1px solid rgb(128, 128, 131);
+  padding: 30px;
+  width: 300px;
+  margin-top: 150px;
+  margin-left: 100px;
+  height: 235px;
+  border-radius: 10px;
+}
+h2 {
+  text-align: center;
+
+  margin-top: px;
+}
+.formInside input {
+  margin-top: 10px;
+  width: 250px;
+  height: 30px;
+}
+.formInside input[type="submit"] {
+  width: 70px;
+  margin-left: 90px;
+  margin-top: 18px;
+  background-color: #142683;
+  color: white;
+  border: none;
+}
+.para {
+  font-size: 20px;
+}
+input[type="submit"] :hover {
+  width: 75px;
+}
+.erColor {
+  color: rgb(248, 52, 52);
+}
+.dash-register{
+  background: none;
+  border :none;
+  color: hsl(224, 70%, 45%);
+  text-decoration: none;
+}

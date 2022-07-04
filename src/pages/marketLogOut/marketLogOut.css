@@ -1,0 +1,24 @@
+.body{
+  
+}
+
+.marketOut {
+  /* border: 1px solid; */
+  height: 86vh;
+}
+
+.textAPI {
+  /* border: 1px solid; */
+  margin: 30px 10px 0px 140px;
+}
+.allButtons {
+  /* border: 1px solid; */
+  margin-left: 1100px;
+  margin-top: -30px;
+
+  display: flex;
+  justify-content: space-around;
+}
+.butt {
+  background-color: aqua;
+}

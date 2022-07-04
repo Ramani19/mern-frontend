@@ -1,0 +1,17 @@
+.allButtons {
+  margin-left: 1100px;
+  margin-top: -30px;
+
+  display: flex;
+  justify-content: space-around;
+}
+.buttonThree {
+  width: 85px;
+  height: 30px;
+  background-color: #142683;
+  color: white;
+  border: none;
+  text-decoration: none;
+  border-radius: 3px;
+  text-align: center;
+}
