@@ -1,6 +1,45 @@
+:root{
+  --var : radial-gradient(45deg, hsl(197, 66%, 87%),
+  hsl(184, 62%, 47%),hsl(248, 51%, 51%));
+}
 .Cuvette-logo {
   padding-left: 25px;
   padding-top: 15px;
 
   margin-right: 1100px;
+  /* border: 1px solid; */
+ 
+  
+}
+.loading{
+  margin: auto;
+  
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+ 
+  border: 4px lightgray solid; 
+  border-top: 3.6px solid blue;
+  border-right: 3.6px solid blue;
+  
+  
+  animation: loading infinite 1s linear  ;
+ 
+ 
+}
+
+  
+  
+
+  
+
+@keyframes loading {
+  to{
+   /* border-right: 3.6px solid blue; */
+   transform: rotate(360deg);
+  }
+  
+}
+.App{
+  /* border: 1px solid; */
 }

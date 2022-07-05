@@ -8,9 +8,9 @@ import { useNavigate, useParams } from 'react-router-dom'
 import './addAPI.css'
 
 
-const AddAPI = () => {
+const AddAPI = ({spinner}) => {
       const {name} =useParams()
-      let url
+      const [loading, setLoading] =useState(false)
       const[err, setErr] = useState() 
       const [API,setAPI] = useState({
         name : "",
@@ -46,6 +46,15 @@ console.log(API)
 
 const submitHandler = async (e) => {
   e.preventDefault()
+  setLoading(true)
+  if(!API.name || !API.description || !API.endpoint)
+  {
+         setErr('please fill all the details')
+         setLoading(false)
+  
+  }
+  else{
+  console.log(name)
   try{
    if(name)
    { 
@@ -56,40 +65,45 @@ const submitHandler = async (e) => {
       description : API.description,
       email : localStorage.getItem('email')
     }).then((e)=>{
+      setLoading(false)
       console.log(e)
+      
       navgtq('../myapis')
+    }).catch(()=>{
+      setLoading(false)
+      
     })
    }
    else{
-    await axios.post('/addAPI',{
+    await axios.post('https://mern-app-r.herokuapp.com/addAPI',{
       name : API.name,
       endpoint : API.endpoint,
       description : API.description,
       email : localStorage.getItem('email')
     }).then((e)=>{
       console.log(e)
+      setLoading(false)
+      
       navgtq('../myapis')
     })
-   }
+   
 
- await axios.post(url,{
-    name : API.name,
-    newName : name,
-    endpoint : API.endpoint,
-    description : API.description,
-    email : localStorage.getItem('email')
-  }).then((e)=>{
-    console.log(e)
-    navgtq('../myapis')
-  })
+ 
 
   }
+
+}
   catch(err){
+    setLoading(false)
+    console.log(err.response)
     const error = err.response.data.message
+    
     setErr(error)
+    
   }
   //navgtq('../myapis')
 
+  }
 }
 //console.log(API)
 const add = 'Add API'
@@ -106,14 +120,14 @@ return (
     <div className='formIn'>
      { name ? <h3>edit the API </h3> : <h3>add new API</h3> }
       
-       <input type="text" onChange={(e)=>{changeHandler(e)}} name='name' value={API.name} placeholder='API name'></input><br/>
-       <input type="text" onChange={(e)=>{changeHandler(e)}} name='endpoint' value={API.endpoint} placeholder='API end point'></input><br/>
-       <input type="text" onChange={(e)=>{changeHandler(e)}} name='description' value={API.description} placeholder='Description of API'></input><br/>
+       <input type="text" required onChange={(e)=>{changeHandler(e)}} name='name' value={API.name} placeholder='API name'></input><br/>
+       <input type="text" required onChange={(e)=>{changeHandler(e)}} name='endpoint' value={API.endpoint} placeholder='API end point'></input><br/>
+       <input type="text" required onChange={(e)=>{changeHandler(e)}} name='description' value={API.description} placeholder='Description of API'></input><br/>
        <p>{err}</p>
-        <input type='submit' value={name ? edit : add} onClick={(e)=>{
+       {loading ? <div>{spinner}</div> : <input type='submit' value={name ? edit : add} onClick={(e)=>{
           submitHandler(e)
           
-        }}/>
+        }}/> }
      
     </div>
     </div>

@@ -20,7 +20,9 @@ import {BrowserRouter as Router ,Routes,Route} from 'react-router-dom';
 import './App.css'
 
 function App (){
-
+  // eslint-disable-next-line no-unused-vars
+  
+  const spinner = <div className='loading'></div>
   
 
   return (
@@ -31,8 +33,10 @@ function App (){
       
       <Router>
       <div className="App">
+        
       <span>  
 <nav className='Cuvette-logo'>
+ 
 
 < img src={logo} className="App-logo" alt="logo" />
 
@@ -50,19 +54,19 @@ function App (){
         
         <Route path="/" element={<MarketOut/>}/>
         <Route path='Page/:id' element={<Page/>}/>
-        <Route path='dashSignup' element={<DashSignup/>}/>
-        <Route path="dashboard/" element={<Dashboard/>}/>
+        <Route path='dashSignup' element={<DashSignup spinner={spinner}/>}/>
+        <Route path="dashboard/" element={<Dashboard spinner={spinner} />}/>
         <Route path="marketIn" element={<MarketIn/>}/>
            
         
         
             {/* <Route path="components/Button/Button" element={<Button/>}/> */}
 
-            <Route path="AddAPI" element={<AddAPI/>}/>
-            <Route path="AddAPI/:name" element={<AddAPI/>}/>
-            <Route path="BGremove" element={<BGremove/>}/>
+            <Route path="AddAPI" element={<AddAPI spinner={spinner}/>}/>
+            <Route path="AddAPI/:name" element={<AddAPI spinner={spinner}/>}/>
+            <Route path="BGremove" element={<BGremove spinner={spinner}/>}/>
            {/* <Route path='pages/DashSign/DashSign' element={<DashSign/>}/> */}
-           <Route path='myapis' element={<Myapis/>}/>
+           <Route path='myapis' element={<Myapis spinner={spinner}/>}/>
        </Routes>
        
       </Router>
